@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yacinth — Portfolio</title>
+<style>
+:root{--blue:#2563eb;--navy:#0f172a;--text:#334155;--muted:#64748b;--bg:#f8fafc;--card:#fff;--line:#e2e8f0;--soft:#eff6ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}a{text-decoration:none;color:inherit}.container{width:min(1120px,92%);margin:auto}.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.navin{height:72px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:24px;font-weight:800;color:var(--navy)}.logo span{color:var(--blue)}.links{display:flex;gap:25px;font-size:14px;font-weight:600}.links a:hover{color:var(--blue)}.menu{display:none;background:none;border:0;font-size:25px}
+.hero{padding:105px 0 90px;background:linear-gradient(135deg,#eff6ff 0%,#fff 55%,#f8fafc 100%)}.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}.eyebrow{color:var(--blue);font-weight:800;letter-spacing:1px;text-transform:uppercase;font-size:13px}.hero h1{font-size:clamp(42px,6vw,72px);line-height:1.05;color:var(--navy);margin:15px 0}.hero h1 span{color:var(--blue)}.hero p{font-size:19px;color:var(--muted);max-width:680px}.buttons{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}.btn{padding:13px 21px;border-radius:10px;font-weight:700;border:1px solid var(--blue);display:inline-block}.primary{background:var(--blue);color:white}.secondary{color:var(--blue);background:white}.profile{background:var(--navy);border-radius:28px;padding:30px;color:white;box-shadow:0 20px 50px rgba(15,23,42,.16)}.profile .initial{width:110px;height:110px;border-radius:50%;display:grid;place-items:center;background:var(--blue);font-size:42px;font-weight:800;margin-bottom:25px}.profile h3{font-size:25px;margin:0}.profile p{color:#cbd5e1;font-size:15px}
+section{padding:90px 0}.section-head{margin-bottom:42px}.section-head h2{font-size:38px;color:var(--navy);margin:0 0 8px}.section-head p{color:var(--muted);max-width:700px}.about{display:grid;grid-template-columns:1fr 1fr;gap:55px}.facts{display:grid;grid-template-columns:1fr 1fr;gap:16px}.fact{background:white;border:1px solid var(--line);padding:22px;border-radius:15px}.fact strong{display:block;color:var(--navy);font-size:18px;margin-bottom:4px}.fact span{font-size:14px;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:var(--card);border:1px solid var(--line);padding:25px;border-radius:18px;transition:.2s}.card:hover{transform:translateY(-4px);box-shadow:0 15px 35px rgba(15,23,42,.08)}.icon{font-size:28px;margin-bottom:10px}.card h3{margin:5px 0 8px;color:var(--navy)}.card p{margin:0;color:var(--muted);font-size:14px}.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.tag{font-size:12px;background:var(--soft);color:var(--blue);padding:5px 9px;border-radius:20px;font-weight:700}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.project{background:white;border:1px solid var(--line);border-radius:18px;padding:28px}.project h3{color:var(--navy);font-size:22px;margin:0 0 8px}.project .number{color:var(--blue);font-weight:800;font-size:13px}.project p{color:var(--muted)}.timeline{border-left:2px solid #dbeafe;padding-left:25px}.item{position:relative;margin-bottom:32px}.item:before{content:"";position:absolute;left:-33px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--blue);border:3px solid white;box-shadow:0 0 0 2px #bfdbfe}.item h3{margin:0;color:var(--navy)}.item small{color:var(--blue);font-weight:700}.item p{color:var(--muted);margin:7px 0}.quote{background:white;border:1px solid var(--line);border-radius:18px;padding:25px}.quote p{font-style:italic;color:var(--text)}.quote strong{color:var(--navy)}.contact{background:var(--navy);color:white}.contact h2{color:white}.contact p{color:#cbd5e1}.contactbox{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.contact-links{display:grid;gap:13px}.contact-link{background:#172554;padding:15px 18px;border-radius:11px}.contact-link span{color:#93c5fd;font-size:13px;display:block}.footer{background:#020617;color:#94a3b8;text-align:center;padding:25px;font-size:13px}
+@media(max-width:800px){.links{display:none}.menu{display:block}.hero-grid,.about,.contactbox{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.hero{padding-top:70px}.profile{max-width:450px}.facts{margin-top:20px}section{padding:65px 0}.section-head h2{font-size:32px}}
+.picture {
+    width: 100px; height: 100px; border-radius: 50% 50%;
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+    <div class="container navin">
+        <a class="logo" href="#accueil">Yacinth<span>.</span></a>
+         <div class="links"><a href="#apropos">À propos</a>
+          <a href="#competences">Compétences</a>
+          <a href="#projets">Projets</a>
+          <a href="#parcours">Parcours</a>
+          <a href="#recommandations">Recommandations</a>
+          <a href="#contact">Contact</a>
+        </div>
+         <button class="menu" onclick="document.querySelector('.links').style.display=document.querySelector('.links').style.display==='flex'?'none':'flex'">☰</button>
+    </div>
+</nav>
+<header class="hero" id="accueil">
+    <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Portfolio professionnel</div>
+            <h1>Bonjour, je suis <span>Yacinth</span>.</h1>
+            <p><strong>Développeur web & mobile · UI/UX Designer · Data Scientist</strong></p>
+            <p>Économiste statisticien passionné par la technologie, la conception d'interfaces et l'analyse des données. Je transforme les idées en solutions numériques utiles, claires et accessibles.</p>
+            <div class="buttons">
+                <a class="btn primary" href="#projets">Voir mes projets</a>
+                <a class="btn secondary" href="#contact">Me contacter</a>
+            </div>
+           </div>
+            <div class="profile">
+                <div class="initial"> <img src="Portrait (4)~2.jpg" alt="" class="picture"></div>
+                <h3>Créatif. Analytique. Orienté solution.</h3>
+                <p>Je combine développement, design et analyse de données pour créer des expériences numériques pensées autour des besoins des utilisateurs.</p>
+                <div class="tags">
+                    <span class="tag">Web</span>
+                    <span class="tag">Mobile</span>
+                    <span class="tag">UI/UX</span>
+                    <span class="tag">Data</span>
+                </div>
+            </div>
+        </div>
+    </header>
+<section id="apropos">
+    <div class="container">
+        <div class="section-head">
+            <h2>À propos de moi</h2>
+            <p>Un profil hybride à l'intersection de la technologie, du design et de l'analyse.</p>
+        </div>
+        <div class="about">
+            <div>
+                <p>Je suis <strong>Yacinth</strong>, économiste statisticien et passionné par les solutions numériques. Mon parcours m'a progressivement conduit vers le développement web et mobile, le design UI/UX et la data.</p>
+                <p>J'aime apprendre par la pratique, concevoir des interfaces intuitives et exploiter les données pour mieux comprendre les problèmes et accompagner la prise de décision.</p>
+                <p>Mon objectif est de continuer à développer des compétences solides et de contribuer à des projets ayant une réelle valeur pour les utilisateurs, les entreprises et les organisations.</p>
+            </div>
+            <div class="facts">
+                <div class="fact">
+                    <strong>Web & Mobile</strong>
+                    <span>Création de solutions numériques</span>
+                </div>
+                <div class="fact">
+                    <strong>UI/UX Design</strong>
+                    <span>Wireframes, interfaces et expérience utilisateur</span>
+                </div>
+                <div class="fact">
+                    <strong>Data</strong>
+                    <span>Collecte, traitement, analyse et visualisation</span>
+                </div>
+                <div class="fact">
+                    <strong>Économie</strong>
+                    <span>Statistiques et aide à la décision</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="competences" style="background:#f1f5f9">
+    <div class="container">
+        <div class="section-head">
+            <h2>Mes compétences</h2>
+            <p>Des compétences complémentaires pour comprendre un besoin, le concevoir et construire une solution.</p>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <div class="icon">💻</div>
+                <h3>Développement web & mobile</h3>
+                <p>Création de pages et applications avec une approche responsive et centrée sur la fonctionnalité.</p>
+                <div class="tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">React</span>
+                    <span class="tag">Bootstrap</span>
+                    <span class="tag">Git & GitHub</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">🎨</div>
+                <h3>UI/UX Design</h3>
+                <p>Conception de wireframes, interfaces et parcours utilisateur avec une attention particulière à la simplicité.</p>
+                <div class="tags">
+                    <span class="tag">Figma</span>
+                    <span class="tag">Thunkable</span>
+                    <span class="tag">Wireframe</span>
+                    <span class="tag">Prototypage</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">📊</div>
+                <h3>Data & statistiques</h3>
+                <p>Collecte, préparation, analyse, visualisation et interprétation des données pour appuyer les décisions.</p>
+                <div class="tags">
+                    <span class="tag">Excel</span>
+                    <span class="tag">R & RStudio </span>
+                    <span class="tag">STATA</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">KoboCollect</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="projets">
+    <div class="container">
+        <div class="section-head">
+            <h2>Projets sélectionnés</h2>
+            <p>Quelques réalisations et projets qui illustrent mon évolution.</p>
+        </div><div class="projects">
+            <div class="project">
+                <div class="number">01 — PROJET NUMÉRIQUE</div>
+                <h3>Royal Tech</h3>
+                <p>Projet orienté services numériques et formation. L'objectif est de proposer des services accessibles dans le domaine du numérique : création de CV, supports publicitaires, traitement de données, formation et solutions web.</p>
+                <div class="tags">
+                    <span class="tag">Digital</span>
+                    <span class="tag">Formation</span>
+                    <span class="tag">Services</span>
+                </div>
+            </div>
+            <div class="project">
+                <div class="number">02 — UI/UX</div>
+                <h3>Application E-market</h3>
+                <p>Conception d'une application de vente avec plusieurs écrans : accueil, catalogue, commande, paiement, création de compte et connexion. Les wireframes ont été travaillés avec Figma.</p>
+                <div class="tags">
+                    <span class="tag">Figma</span>
+                    <span class="tag">UI/UX</span>
+                    <span class="tag">Mobile</span>
+                </div>
+            </div>
+            <div class="project">
+                <div class="number">03 — DATA</div>
+                <h3>Analyse & visualisation de données</h3>
+                <p>Travaux autour d'indicateurs économiques et sociaux, avec analyse statistique, corrélations, régressions économétriques et visualisation pour faciliter l'interprétation des résultats.</p><div class="tags"><span class="tag">STATA</span><span class="tag">Excel</span><span class="tag">DataViz</span></div></div><div class="project"><div class="number">04 — COLLECTE</div><h3>KoboCollect</h3><p>Montée en compétence sur la collecte numérique de données et la conception de questionnaires, avec une approche allant de la collecte à l'exploitation des données.</p><div class="tags"><span class="tag">KoboCollect</span><span class="tag">Collecte</span><span class="tag">Data</span></div></div></div></div></section>
+<section id="parcours" style="background:#f1f5f9">
+    <div class="container">
+        <div class="section-head">
+            <h2>Parcours</h2>
+            <p>Une formation en économie et statistiques complétée par une orientation progressive vers la technologie.</p>
+        </div>
+        <div class="timeline">
+            <div class="item">
+                <h3>Licence professionnelle en économie appliquée</h3>
+                <small>Université d'Abomey-Calavi</small>
+                <p>Formation en économie, statistiques et analyse, avec une orientation vers l'exploitation des données et l'aide à la décision.</p>
+            </div>
+            <div class="item">
+                <h3>Développement web & compétences numériques</h3>
+                <small>Formation continue</small>
+                <p>HTML, CSS, JavaScript, responsive design, Git/GitHub, APIs et initiation aux technologies web modernes.</p>
+            </div>
+            <div class="item">
+                <h3>UI/UX Design</h3>
+                <small>Pratique et projets personnels</small>
+                <p>Conception de wireframes et interfaces avec Figma, avec une attention portée à l'expérience utilisateur.</p>
+            </div>
+            <div class="item">
+                <h3>Data & collecte numérique</h3>
+                <small>Formation continue</small>
+                <p>Excel avancé, STATA, Python, analyse de données, visualisation et KoboCollect.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="services">
+    <div class="container">
+        <div class="section-head">
+            <h2>Ce que je peux réaliser</h2>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <div class="icon">🌐</div>
+                <h3>Création web</h3>
+                <p>Sites vitrines, pages professionnelles et interfaces web responsive.</p>
+            </div>
+            <div class="card">
+                <div class="icon">📱</div>
+                <h3>Solutions mobiles</h3>
+                <p>Prototypage et développement de petites applications adaptées aux besoins.</p>
+            </div>
+            <div class="card">
+                <div class="icon">✏️</div>
+                <h3>Design UI/UX</h3>
+                <p>Wireframes, maquettes et interfaces pensées pour une utilisation simple et intuitive.</p>
+            </div>
+            <div class="card">
+                <div class="icon">📈</div>
+                <h3>Analyse de données</h3>
+                <p>Nettoyage, analyse, visualisation et interprétation des données.</p>
+            </div>
+            <div class="card">
+                <div class="icon">📝</div>
+                <h3>Documents professionnels</h3>
+                <p>Création de CV, supports publicitaires et documents numériques.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🖥️</div>
+                <h3>Assistance informatique</h3>
+                <p>Installation, configuration et accompagnement sur les outils informatiques.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="recommandations" style="background:#f1f5f9">
+    <div class="container">
+        <div class="section-head">
+            <h2>Recommandations</h2>
+            <p>Quelques témoignages professionnels mettant en avant mes qualités.</p>
+        </div>
+        <div class="cards">
+            <div class="quote">
+                <p>« Yacinth est un développeur web motivé et curieux, capable de transformer une idée en solution numérique fonctionnelle. Il se distingue par sa capacité d'apprentissage, son sérieux et son souci du détail. »</p>
+                <strong>— Recommandation professionnelle</strong>
+            </div>
+            <div class="quote">
+                <p>« Yacinth possède une réelle capacité à transformer des idées en interfaces claires et intuitives. Sa créativité, sa réceptivité aux retours et sa volonté de progresser font de lui un profil prometteur en UI/UX. »</p>
+                <strong>— Recommandation professionnelle</strong>
+            </div>
+            <div class="quote">
+                <p>« Son parcours en économie et statistiques, combiné à son intérêt pour la data, lui permet d'aborder les problèmes avec un esprit analytique et orienté décision. Yacinth est sérieux, motivé et orienté vers les solutions. »</p>
+                <strong>— Recommandation professionnelle</strong>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</section>
+<section class="contact" id="contact">
+    <div class="container contactbox">
+        <div>
+            <div class="eyebrow" style="color:#60a5fa">Contact</div>
+            <h2 style="font-size:40px;margin:10px 0">Construisons quelque chose ensemble.</h2>
+            <p>Vous avez un projet web, une idée d'application, un besoin en design ou une mission liée aux données ? Je serais heureux d'en discuter avec vous.</p>
+            <a class="btn primary" href="mailto:attimankanyacinth@gmail.com">Envoyer un message</a>
+        </div>
+         <div class="contact-links">
+            <div class="contact-link">
+                <span>Téléphone</span>
+                +2290157720027
+            </div>
+        <div class="contact-links">
+            <div class="contact-link">
+                <span>E-mail</span>
+                attimankanyacinth@gmail.com
+            </div>
+                <div class="contact-link">
+                    <span>LinkedIn</span>
+                    <a href="https://www.linkedin.com/in/yacinth-attimankan-79607a248?utm_source=share_via&utm_content=profile&utm_medium=member_android">Yacinth ATTIMANKAN</a>
+                </div>
+                <div class="contact-link">
+                    <span>GitHub</span>
+                    Votre profil GitHub
+                </div>
+                <div class="contact-link">
+                    <span>Localisation</span>
+                    Bénin
+                </div>
+            </div>
+        </div>
+    </section>
+<footer class="footer">
+    © 2026 Yacinth — Portfolio professionnel. Tous droits réservés.
+</footer>
+</body></html>
